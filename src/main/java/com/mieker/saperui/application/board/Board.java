@@ -8,9 +8,9 @@ import java.util.Arrays;
 @Getter
 @Setter
 public class Board {
-    int xSize;
-    int ySize;
-    int[][] board;
+    private int xSize;
+    private int ySize;
+    private int[][] board;
 
     public Board(int xSize, int ySize) {
         this.xSize = xSize;
