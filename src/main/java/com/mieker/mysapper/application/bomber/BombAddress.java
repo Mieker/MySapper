@@ -1,4 +1,4 @@
-package com.mieker.saperui.application.bomber;
+package com.mieker.mysapper.application.bomber;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

@@ -1,6 +1,6 @@
-package com.mieker.saperui.application.bomber;
+package com.mieker.mysapper.application.bomber;
 
-import com.mieker.saperui.application.board.Board;
+import com.mieker.mysapper.application.board.Board;
 
 import java.util.HashSet;
 import java.util.Random;

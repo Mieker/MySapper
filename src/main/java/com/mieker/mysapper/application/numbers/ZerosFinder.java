@@ -1,9 +1,9 @@
-package com.mieker.saperui.application.numbers;
+package com.mieker.mysapper.application.numbers;
 
-import com.mieker.saperui.model.MyButton;
-import com.mieker.saperui.application.Styller;
-import com.mieker.saperui.application.board.Board;
-import com.mieker.saperui.model.Status;
+import com.mieker.mysapper.model.MyButton;
+import com.mieker.mysapper.application.Styller;
+import com.mieker.mysapper.application.board.Board;
+import com.mieker.mysapper.model.Status;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;

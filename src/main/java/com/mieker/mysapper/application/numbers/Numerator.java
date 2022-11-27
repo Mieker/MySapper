@@ -1,6 +1,6 @@
-package com.mieker.saperui.application.numbers;
+package com.mieker.mysapper.application.numbers;
 
-import com.mieker.saperui.application.board.Board;
+import com.mieker.mysapper.application.board.Board;
 
 public class Numerator {
 

@@ -7,8 +7,8 @@ module com.mieker.saperui {
     requires com.almasb.fxgl.all;
     requires lombok;
 
-    opens com.mieker.saperui to javafx.fxml;
-    exports com.mieker.saperui;
-    exports com.mieker.saperui.model;
-    opens com.mieker.saperui.model to javafx.fxml;
+    opens com.mieker.mysapper to javafx.fxml;
+    exports com.mieker.mysapper;
+    exports com.mieker.mysapper.model;
+    opens com.mieker.mysapper.model to javafx.fxml;
 }

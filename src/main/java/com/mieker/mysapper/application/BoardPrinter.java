@@ -1,7 +1,7 @@
-package com.mieker.saperui.application;
+package com.mieker.mysapper.application;
 
 
-import com.mieker.saperui.application.board.Board;
+import com.mieker.mysapper.application.board.Board;
 
 public class BoardPrinter {
 

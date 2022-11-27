@@ -1,4 +1,4 @@
-package com.mieker.saperui.application.board;
+package com.mieker.mysapper.application.board;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.mieker.saperui.application;
+package com.mieker.mysapper.application;
 
 public class Styller {
 

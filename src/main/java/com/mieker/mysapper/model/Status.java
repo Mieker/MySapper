@@ -1,4 +1,4 @@
-package com.mieker.saperui.model;
+package com.mieker.mysapper.model;
 
 public enum Status {
     COVERED,

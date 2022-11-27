@@ -1,11 +1,11 @@
-package com.mieker.saperui;
+package com.mieker.mysapper;
 
-import com.mieker.saperui.application.BoardCreator;
-import com.mieker.saperui.application.Styller;
-import com.mieker.saperui.application.board.Board;
-import com.mieker.saperui.application.numbers.ZerosFinder;
-import com.mieker.saperui.model.MyButton;
-import com.mieker.saperui.model.Status;
+import com.mieker.mysapper.application.BoardCreator;
+import com.mieker.mysapper.application.Styller;
+import com.mieker.mysapper.application.board.Board;
+import com.mieker.mysapper.application.numbers.ZerosFinder;
+import com.mieker.mysapper.model.MyButton;
+import com.mieker.mysapper.model.Status;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class MySapperApplication extends Application {
 
     static Board board;
     static GridPane grid;
