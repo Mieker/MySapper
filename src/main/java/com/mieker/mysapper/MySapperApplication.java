@@ -28,6 +28,7 @@ public class MySapperApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        primaryStage.setResizable(false);
         BoardCreator boardCreator = new BoardCreator();
         board = boardCreator.createBoard();
 
