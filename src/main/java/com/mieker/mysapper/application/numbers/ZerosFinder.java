@@ -1,20 +1,15 @@
 package com.mieker.mysapper.application.numbers;
 
-import com.mieker.mysapper.model.MyButton;
 import com.mieker.mysapper.application.Styller;
 import com.mieker.mysapper.application.board.Board;
+import com.mieker.mysapper.model.MyButton;
 import com.mieker.mysapper.model.Status;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class ZerosFinder {
 
-    Set<MyButton> zeroButtons = new HashSet<>();
-    Set<MyButton> numberButtons = new HashSet<>();
     Board board;
     GridPane grid;
     Styller styller = new Styller();
@@ -24,9 +19,6 @@ public class ZerosFinder {
         this.grid = grid;
 
         findAllAdjacentZeros(x, y);
-
-//        activateNumberButtons();
-//        activateZeroButtons();
     }
 
     private void findAllAdjacentZeros(int x, int y) {
@@ -42,25 +34,11 @@ public class ZerosFinder {
         detectNumber(x, y, 1, 1);
     }
 
-//    public void activateNumberButtons() {
-//        numberButtons.forEach(button -> {
-//            int number = board.getBoard()[button.getY()][button.getX()];
-//            button.setText(String.valueOf(number));
-//        });
-//    }
-
-//    private void activateZeroButtons() {
-//        zeroButtons.forEach(button -> {
-//            findAllAdjacentZeros(button.getX(), button.getY());
-//        });
-//    }
-
     private void detectNumber(int x, int y, int xMod, int yMod) {
         int newX = x + xMod;
         int newY = y + yMod;
-        int num = 0;
         try {
-            num = board.getBoard()[newY][newX];
+            int num = board.getBoard()[newY][newX];
             MyButton button = (MyButton) getNodeByRowColumnIndex(newY, newX, grid);
             if (!button.isClicked()) {
                 button.setClicked(true);

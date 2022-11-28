@@ -6,7 +6,7 @@ public class Numerator {
 
     int[][] boardToFill;
 
-    public int[][] placeBombsNumbers(Board board) {
+    public void placeBombsNumbers(Board board) {
         boardToFill = board.getBoard();
 
         for (int i = 0; i < board.getYSize(); i++) {
@@ -16,8 +16,6 @@ public class Numerator {
                 }
             }
         }
-
-        return boardToFill;
     }
 
     private int countNeighboursBombs(int x, int y) {

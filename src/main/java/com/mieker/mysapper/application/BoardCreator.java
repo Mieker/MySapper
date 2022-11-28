@@ -6,25 +6,17 @@ import com.mieker.mysapper.application.numbers.Numerator;
 
 public class BoardCreator {
 
-    public Board createBoard() {
-        BoardPrinter boardPrinter = new BoardPrinter();
-        Board board = new Board(16, 16);
-        System.out.println("Empty board created");
+    public Board createBoard(int boardSize, int numOfBombs) {
+        Board board = new Board(boardSize, boardSize);
 
         board.fulfillBoard();
-        System.out.println("Board fulfilled by zeros");
-        boardPrinter.printBoard(board);
 
         BombFiller bombFiller = new BombFiller();
-        bombFiller.prepareBombsAddresses(16, 40);
+        bombFiller.prepareBombsAddresses(boardSize, numOfBombs);
         board.setBoard(bombFiller.putBombs(board));
-        System.out.println("Bombs placed");
-        boardPrinter.printBoard(board);
 
         Numerator numerator = new Numerator();
         numerator.placeBombsNumbers(board);
-        System.out.println("Bombs counted and marked");
-        boardPrinter.printBoard(board);
 
         return board;
     }
