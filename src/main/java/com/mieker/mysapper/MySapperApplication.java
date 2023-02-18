@@ -7,21 +7,49 @@ import com.mieker.mysapper.model.ButtonCreator;
 import com.mieker.mysapper.model.MyButton;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+import lombok.Getter;
+import lombok.Setter;
 
 public class MySapperApplication extends Application {
-    Board board;
-    GridPane grid;
-    ButtonCreator buttonCreator = new ButtonCreator();
-    int boardSize = 10;
-    int numOfBombs = (boardSize * boardSize) / 6;
+    static Board board;
+    static GridPane grid;
+    static Label label = new Label();
+    static ButtonCreator buttonCreator = new ButtonCreator();
+    static BoardCreator boardCreator = new BoardCreator();
+    static BorderPane borderPane = new BorderPane();
+
+    static int boardSize = 10;
+    static int numOfBombs = (boardSize * boardSize) / 6;
+    public static int bombCounter = numOfBombs;
 
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setResizable(false);
         primaryStage.setTitle("MySapper");
-        BoardCreator boardCreator = new BoardCreator();
+
+        MainMenuBar menu = new MainMenuBar();
+        refreshLabelValue();
+
+        borderPane.setTop(menu.createMenuBar());
+        borderPane.setBottom(label);
+
+        setNewGame();
+
+        Scene scene = new Scene(borderPane);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+    }
+
+    public static void refreshLabelValue() {
+        label.setText("Bombs left: " + String.valueOf(bombCounter));
+    }
+
+    public static void setNewGame() {
         board = boardCreator.createBoard(boardSize, numOfBombs);
 
         grid = new GridPane();
@@ -45,17 +73,9 @@ public class MySapperApplication extends Application {
 
             grid.add(button, i % boardSize, i / boardSize);
         }
+        borderPane.setCenter(grid);
 
-        BorderPane borderPane = new BorderPane(grid);
-        MainMenuBar menu = new MainMenuBar();
-
-        borderPane.setTop(menu.createMenuBar());
-
-        Scene scene = new Scene(borderPane);
-        primaryStage.setScene(scene);
-        primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch();

@@ -8,6 +8,8 @@ import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 
+import static javafx.scene.layout.GridPane.*;
+
 public class ZerosFinder {
 
     Board board;
@@ -44,6 +46,8 @@ public class ZerosFinder {
                 button.setClicked(true);
                 button.setStatus(Status.SHOWED);
                 if (num == 0) {
+                    button.setGraphic(null);
+                    button.setText("");
                     button.setDisable(true);
                     findAllAdjacentZeros(newX, newY);
                 } else {
@@ -60,7 +64,7 @@ public class ZerosFinder {
         ObservableList<Node> children = gridPane.getChildren();
 
         for (Node node : children) {
-            if (gridPane.getRowIndex(node) == row && gridPane.getColumnIndex(node) == column) {
+            if (getRowIndex(node) == row && getColumnIndex(node) == column) {
                 result = node;
                 break;
             }

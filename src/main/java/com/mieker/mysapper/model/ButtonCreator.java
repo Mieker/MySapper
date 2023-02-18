@@ -1,5 +1,6 @@
 package com.mieker.mysapper.model;
 
+import com.mieker.mysapper.MySapperApplication;
 import com.mieker.mysapper.application.Styller;
 import com.mieker.mysapper.application.board.Board;
 import com.mieker.mysapper.application.numbers.ZerosFinder;
@@ -43,14 +44,19 @@ public class ButtonCreator {
             ImageView mineView = new ImageView(mine);
             if (event.getButton() == MouseButton.SECONDARY) {
                 if (button.getStatus().equals(Status.COVERED)) {
+                    MySapperApplication.bombCounter --;
+                    MySapperApplication.refreshLabelValue();
                     button.setStatus(Status.MARKED);
                     button.setGraphic(mineView);
                 } else if (button.getStatus().equals(Status.MARKED)) {
+
                     button.setStatus(Status.GUESS);
                     button.setGraphic(null);
                     button.setText("?");
                     button.setStyle("-fx-font-weight: 700; ");
                 } else if (button.getStatus().equals(Status.GUESS)) {
+                    MySapperApplication.bombCounter ++;
+                    MySapperApplication.refreshLabelValue();
                     button.setStatus(Status.COVERED);
                     button.setText("");
                 }

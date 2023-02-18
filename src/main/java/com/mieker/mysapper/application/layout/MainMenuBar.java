@@ -1,8 +1,10 @@
 package com.mieker.mysapper.application.layout;
 
+import com.mieker.mysapper.MySapperApplication;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+
 
 public class MainMenuBar {
 
@@ -16,6 +18,7 @@ public class MainMenuBar {
 
         Menu gameMenu = new Menu(GAME_MENU);
         MenuItem newGameItem = new MenuItem(NEW_GAME_ITEM);
+        newGameItem.setOnAction(action -> newGame());
         MenuItem exitGame = new MenuItem(EXIT_GAME_ITEM);
         exitGame.setOnAction(action -> exitProgram());
         gameMenu.getItems().addAll(newGameItem, exitGame);
@@ -25,6 +28,10 @@ public class MainMenuBar {
         menu.getMenus().addAll(gameMenu, aboutMenu);
 
         return menu;
+    }
+
+    private void newGame() {
+        MySapperApplication.setNewGame();
     }
 
     private void exitProgram() {
